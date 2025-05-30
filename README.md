@@ -37,28 +37,32 @@ The  kernel is randomly generated, and we evaluate **two** points of the form $x
 
 The output is as follows:
  ```
- % sage main.py "Proposed" "One"  1 
-p= 276154505650672190920223
-isogeny chain: [79, 67, 29, 29, 29, 19, 11, 11, 11, 11, 7, 3, 3, 3, 3, 3, 3]
-ell= 79
-Time: 4.279475582996383 sec
-ell= 67
-ell= 29
-ell= 29
-ell= 29
-ell= 19
-ell= 11
-ell= 11
-ell= 11
-ell= 11
+% sage main.py "Proposed" "One"  2
+p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
+isogeny chain: [1321, 571, 311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
+ell= 1321
+Time: 5856.6251418750035 sec
+ell= 571
+ell= 311
+ell= 31
+ell= 31
+ell= 31
+ell= 31
+ell= 31
+ell= 31
+ell= 31
+ell= 31
+ell= 17
+ell= 17
+.
+.
+.
+ell= 7
+ell= 7
+ell= 7
 ell= 7
 ell= 3
-ell= 3
-ell= 3
-ell= 3
-ell= 3
-ell= 3
-Total time: 13.715508541004965 sec
+Total time: 6758.846125374999 sec
  ```
 
 The above result means that it takes about 4.28 seconds to compute the $(79,79)$-isogeny and takes about 13.71 seconds to compute the whole isogeny chain. 
