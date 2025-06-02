@@ -85,5 +85,6 @@ assert pt_fx_E2_list[1].order()==ord2
 
 from func_test import Average_time
 
-Average_time(10,"3")
+Average_time(10,1,3)
+Average_time(10,2,3)
 
