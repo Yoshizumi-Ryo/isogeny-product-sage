@@ -12,8 +12,6 @@ This code is written in [SageMath](https://www.sagemath.org).
 
 ## Usage
 
-Please select **three options** from the following:
-
 Run the following command to compute and measure the runtime of an $(\ell,\ell)$-isogeny chain:
 
 ```bash
