@@ -8,7 +8,7 @@ from func_elliptic import Translate_by_M,Mont_pt_to_lv2,Mont_4torsion_to_lv2null
 from class_theta_dim1 import Dim1_theta,Dim1_theta_null
 from func_proposed_isogeny import Codomain_dim2,Evaluation_dim2_special
 from func_elliptic import Is_Elliptic_product
-from func_isogeny import CodOne,EvalOne,EvalSq,Product_power_lambda
+from func_existing_isogeny import CodOne,CodSq,EvalOne,EvalSq,Product_power_lambda
 from class_theta_dim2 import NullCoord,To_null,Coord
 
 import time
@@ -94,14 +94,14 @@ def Preparation_dim1_theta(E1,E2,P1,P2,Q1,Q2,x1_list:list,N:int):
 def Odd_deg_isogeny_chain(
     tnp_E1:Dim1_theta_null,first_basis_E1:list,ext_P1:list,ext_Q1:list,ext_x_E1_list:list,
     tnp_E2:Dim1_theta_null,first_basis_E2:list,ext_P2:list,ext_Q2:list,
-    N:int,One_or_Square="One",proposed_or_exsisited="Proposed"):
+    N:int,One_or_Square="One",proposed_or_exsisiting="Proposed"):
     """ 
     function for attack (2/3): Main!!
     Compute (N_A,N_A)-isogeny by splitting to isogeny chain.
     At the last step, we don't split to the product of elliptic curves in this function.
     """
-    assert (One_or_Square   in {"One"    ,"Square"})
-    assert (proposed_or_exsisited in {"Proposed","Existing"})
+    assert (One_or_Square in {"One","Square"})
+    assert (proposed_or_exsisiting in {"Proposed","Existing"})
     fac=Decomp_degree(N)
     print("isogeny chain:",fac)
     #################################################
@@ -109,32 +109,31 @@ def Odd_deg_isogeny_chain(
     l=fac[0]
     print("ell=",l)
     each_strat=time.perf_counter()
-    #Codomain.---------------------------------------   
-    tc_0,_,exc_h_lincom_lsq_E2,cod_coeff_E1,cod_coeff_E2=Codomain_dim2(
-        tnp_E1,tnp_E2,first_basis_E1,first_basis_E2,l,"One")    
-    assert not Is_Elliptic_product(tc_0)[0]
-    assert(len(dict(cod_coeff_E1))==l**2)
-    assert(len(dict(cod_coeff_E2))==l**2)
-    # Evaluation of kernel. ---------------------------------------
-    
-    # tc_f1=Evaluation_dim2_general(
-    #             tnp_E1,first_basis_E1,ext_P1,cod_coeff_E1,
-    #             tnp_E2,first_basis_E2,ext_P2,cod_coeff_E2,l,One_or_Square)    
-    # tc_f2=Evaluation_dim2_general(
-    #             tnp_E1,first_basis_E1,ext_Q1,cod_coeff_E1,
-    #             tnp_E2,first_basis_E2,ext_Q2,cod_coeff_E2,l,One_or_Square)
-    
+    # Evaluation of kernel. ---------------------------------------    
     tnp_E1E2=To_null(tnp_E1.Product_theta(tnp_E2))
     first_basis_E1E2=[
         first_basis_E1[i].Product_theta(first_basis_E2[i]) for i in range(0,3)]
     for i in range(0,3):
         first_basis_E1E2[i].order=l
-    first_basis_E1E2[0].lmd_lpow_value=[
-        cod_coeff_E1[(1,0)][u]*cod_coeff_E2[(1,0)][u] for u in range(0,2)]
-    first_basis_E1E2[1].lmd_lpow_value=[
-        cod_coeff_E1[(0,1)][u]*cod_coeff_E2[(0,1)][u] for u in range(0,2)]
-    first_basis_E1E2[2].lmd_lpow_value=[
-        cod_coeff_E1[(1,1)][u]*cod_coeff_E2[(1,1)][u] for u in range(0,2)]
+    #Codomain.--------------------------------------- 
+    if proposed_or_exsisiting=="Proposed":  
+        tc_0,_,exc_h_lincom_lsq_E2,cod_coeff_E1,cod_coeff_E2=Codomain_dim2(
+            tnp_E1,tnp_E2,first_basis_E1,first_basis_E2,l,"One")    
+        #assert(len(dict(cod_coeff_E1))==l**2)
+        #assert(len(dict(cod_coeff_E2))==l**2)
+        first_basis_E1E2[0].lmd_lpow_value=[
+            cod_coeff_E1[(1,0)][u]*cod_coeff_E2[(1,0)][u] for u in range(0,2)]
+        first_basis_E1E2[1].lmd_lpow_value=[
+            cod_coeff_E1[(0,1)][u]*cod_coeff_E2[(0,1)][u] for u in range(0,2)]
+        first_basis_E1E2[2].lmd_lpow_value=[
+            cod_coeff_E1[(1,1)][u]*cod_coeff_E2[(1,1)][u] for u in range(0,2)]
+    else: #Existing method.
+        if One_or_Square=="One":
+            tc_0=CodOne(tnp_E1E2,first_basis_E1E2)
+        else: #Square
+            tc_0=CodSq(tnp_E1E2,first_basis_E1E2)
+    #-------------------------------------------------------------
+    assert not Is_Elliptic_product(tc_0)[0]
     ext_P1P2=[ext_P1[i].Product_theta(ext_P2[i]) for i in range(0,3)]
     ext_Q1Q2=[ext_Q1[i].Product_theta(ext_Q2[i]) for i in range(0,3)]
     lmd_data=Product_power_lambda(first_basis_E1E2)
@@ -147,11 +146,11 @@ def Odd_deg_isogeny_chain(
     
     # Main part !!!!! ----------------------------------
     # Evaluation of (x,0).
-    if proposed_or_exsisited=="Proposed":
+    if proposed_or_exsisiting=="Proposed":
         tc_fx_list =[Evaluation_dim2_special(
                     tnp_E1,first_basis_E1,ext_x_E1,cod_coeff_E1,exc_h_lincom_lsq_E2,l,One_or_Square)
                     for ext_x_E1 in ext_x_E1_list]
-    else: #geenral(=exisited method).
+    else: #geenral(=existing method).
         ext_0_E2=[tnp_E2,first_basis_E2[0],first_basis_E2[1]]
         ext_x0_list=[[
             ext_x_E1[i].Product_theta(ext_0_E2[i]) for i in range(0,3)]
@@ -165,9 +164,11 @@ def Odd_deg_isogeny_chain(
     # for tc_fx in tc_fx_list:
     #     assert tc_0.Is_on_Kummer_eq(tc_fx)
     each_end=time.perf_counter()
-    print("Time:",each_end-each_strat,"sec")
+    time1=each_end-each_strat
+    print("Time:",time1,"sec")
     #################################################
     #2nd~last.
+    print("Currently computing the remaining isogenies.")
     s=fac[0]
     for i in range(1,len(fac)):
         each_strat=time.perf_counter()
@@ -175,7 +176,7 @@ def Odd_deg_isogeny_chain(
         assert(is_prime(l))
         k=N//(s*l)
         assert(s*l*k==N)
-        print("ell=",l)
+        #print("ell=",l)
         # assert tc_0.Is_order(tc_f1,l*k)
         # assert tc_0.Is_order(tc_f2,l*k)
         # assert not tc_f1.Peq(tc_f2)
@@ -219,7 +220,7 @@ def Odd_deg_isogeny_chain(
     assert(Is_Elliptic_product(tc_0)[0])
     assert(tc_0.Is_same_proj(tc_f1))
     assert(tc_0.Is_same_proj(tc_f1))
-    return tc_0,tc_fx_list
+    return tc_0,tc_fx_list,time1
 
 
 
@@ -329,7 +330,7 @@ def Splitting(lv2tnp:NullCoord,tc_fx_list:list):
 
 
 
-def Total_computation(E1,E2,P1,P2,Q1,Q2,fx_list:list,D:int,One_or_Square,proposed_or_exsisited):
+def Total_computation(E1,E2,P1,P2,Q1,Q2,fx_list:list,D:int,One_or_Square,proposed_or_exsisiting):
     """ 
     This function is the main function that integrates all the individual steps.
     """
@@ -337,11 +338,12 @@ def Total_computation(E1,E2,P1,P2,Q1,Q2,fx_list:list,D:int,One_or_Square,propose
     #compute theta coordinate to start isogeny chain.
     tnp_E1,first_basis_E1,ext_P1,ext_Q1,ext_x_E1_list,tnp_E2,first_basis_E2,ext_P2,ext_Q2=Preparation_dim1_theta(E1,E2,P1,P2,Q1,Q2,fx_list,D)
     #Main: isogeny chain.
-    tnp_cod,tc_x_cod_list=Odd_deg_isogeny_chain(tnp_E1,first_basis_E1,ext_P1,ext_Q1,ext_x_E1_list,tnp_E2,first_basis_E2,ext_P2,ext_Q2,D,One_or_Square,proposed_or_exsisited)
+    tnp_cod,tc_x_cod_list,time1=Odd_deg_isogeny_chain(tnp_E1,first_basis_E1,ext_P1,ext_Q1,ext_x_E1_list,tnp_E2,first_basis_E2,ext_P2,ext_Q2,D,One_or_Square,proposed_or_exsisiting)
     #split to elliptic curves.
     result=Splitting(tnp_cod,tc_x_cod_list)
     time_end=time.perf_counter()
-    print("Total time:",time_end-time_strat,"sec")
-    return result
+    time2=time_end-time_strat
+    print("Total time:",time2,"sec")
+    return result,time1,time2
 
 

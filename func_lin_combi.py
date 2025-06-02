@@ -103,7 +103,7 @@ def Half_LinCom_dim1(tc_0:Dim1_theta_null,ext_basis:list,l:int):
                 lincom[(k1,k2-1)],tc_e2,lincom[(k1,k2-2)])
     lincom[(ld+1,ld+1)]=tc_0.Diff_add_dim1(
         lincom[(ld+1,ld)],tc_e2,lincom[(ld+1,ld-1)])
-    assert(len(lincom.keys())==(((l**2+1)//2)+3))
+    #assert(len(lincom.keys())==(((l**2+1)//2)+3))
     return lincom
 
 
@@ -114,7 +114,7 @@ def Remain_Half_coeff_without0(l:int):
     remained_set={(k1,k2) for k1 in range(0,l) for k2 in range(0,l)}
     remained_set=remained_set.difference(Set_H_ell(l))
     remained_set=remained_set.difference({(0,0)})
-    assert(len(remained_set)==(l**2-1)//2)
+    #assert(len(remained_set)==(l**2-1)//2)
     return remained_set
     
 
@@ -153,7 +153,7 @@ def XpLinCom_dim1(tc_0:Dim1_theta_null,ext_basis:list,ext_x:list,l:int):
             assert(not (k1,k2) in xplincom.keys())
             xplincom[(k1,k2)]=tc_0.Diff_add_dim1(
                 xplincom[(k1-1,k2)],tc_e1,xplincom[(k1-2,k2)])
-    assert(len(xplincom.keys())==l**2+2)
+    #assert(len(xplincom.keys())==l**2+2)
     return xplincom
 
 

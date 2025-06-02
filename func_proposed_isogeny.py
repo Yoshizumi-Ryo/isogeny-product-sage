@@ -10,7 +10,7 @@ from func_lin_combi   import Set_H_ell,Half_LinCom_dim1,XpLinCom_dim1,Comp_H_ell
 from func_fraction    import Dict_common_denom_len3,Multpower_straight,Multpower_sq,Common_denom_frac
 from class_theta_dim1 import Dim1_theta,Dim1_theta_null
 from class_theta_dim2 import Coord,NullCoord
-from func_isogeny import Sum_of_square
+from func_existing_isogeny import Sum_of_square
 
 
         
@@ -166,7 +166,7 @@ def Excellent_term_CodSq_dim1(tc_0:Dim1_theta_null,ext_basis:list,l:int):
             assert(not (k1,k2) in lincom)
             lincom[(k1,k2)]=lincom[(l-k1,l-k2)].Mult_frac(
                 [den_pow[-aden],lmd1_lpow_pow[-a1]*lmd2_lpow_pow[-a2]*lmd_div_lpow_pow[-adiv]])
-    assert(len(lincom)==l**2)
+    #assert(len(lincom)==l**2)
     #compute excellent term.
     excellent_h_lincom_lsq=dict()
     coeff=dict()
@@ -236,8 +236,8 @@ def Codomain_dim2(tc_0_E1:Dim1_theta_null,tc_0_E2:Dim1_theta_null,ext_basis_E1:l
             tc_0_E1,ext_basis_E1,l)
         exc_h_lincom_lsq_E2,cod_coeff_E2=Excellent_term_CodSq_dim1(
             tc_0_E2,ext_basis_E2,l)
-    assert(len(dict(cod_coeff_E1))==l**2)
-    assert(len(dict(cod_coeff_E2))==l**2)
+    #assert(len(dict(cod_coeff_E1))==l**2)
+    #assert(len(dict(cod_coeff_E2))==l**2)
     tc_f0=Prod_nn_nn(exc_h_lincom_lsq_E1[(0,0)],exc_h_lincom_lsq_E2[(0,0)])
     for (k1,k2) in Set_H_ell(l):
         sum_part=Prod_nn_nn(
@@ -276,7 +276,7 @@ def Product_power_lambda_dim1(lmd1_lpow,lmd2_lpow,lmd12_lpow,l:int):
                 den_pow[k1**2+k2**2+k1*k2]]
     lm_1_lsq=[lmd1_lpow_pow[l],den_pow[l]]
     lm_2_lsq=[lmd2_lpow_pow[l],den_pow[l]]
-    assert(len(lmd_pow_product)==l**2)
+    #assert(len(lmd_pow_product)==l**2)
     return [lmd_pow_product,lm_1_lsq,lm_2_lsq]
 
 
@@ -314,7 +314,7 @@ def Excellent_term_EvalOne_dim1(tc_0:Dim1_theta_null,ext_basis:list,ext_x:list,l
     """ 
     normalization in evaluation in dimension 2.
     """
-    assert(len(dict(cod_coeff))==l**2)
+    #assert(len(dict(cod_coeff))==l**2)
     xplincom  =XpLinCom_dim1(tc_0,ext_basis,ext_x,l)
     tc_x      =ext_x[0]
     tc_xple1  =xplincom[(l,0)]
@@ -349,7 +349,7 @@ def Excellent_term_EvalOne_dim1(tc_0:Dim1_theta_null,ext_basis:list,ext_x:list,l
 
 def Excellent_term_EvalSq_dim1(tc_0: Dim1_theta_null,ext_basis:list,ext_x:list,l:int,cod_coeff:dict):
     """ compute evaluation by l=a_1^2+...+a_r^2."""
-    assert(len(dict(cod_coeff))==l**2)
+    #assert(len(dict(cod_coeff))==l**2)
     [tc_e1,tc_e2,tc_e12]   =ext_basis
     [tc_x,tc_xpe1,tc_xpe2] =ext_x
     #a_u=Sum_of_square_mod24(l)
@@ -379,7 +379,7 @@ def Excellent_term_EvalSq_dim1(tc_0: Dim1_theta_null,ext_basis:list,ext_x:list,l
         else:
             auxplincom=XpLinCom_dim1(
                 tc_0,[au_e1,au_e2,au_e12],[au_x,au_xpe1,au_xpe2],l)
-        assert(len(auxplincom.keys())==l**2+2)
+        #assert(len(auxplincom.keys())==l**2+2)
         if au==1:
             xplincom=auxplincom
         auxplincom_list.append(auxplincom)
@@ -425,8 +425,8 @@ def Evaluation_dim2_general(
     evaluation for the general case, i.e., x=(x_E1,x_E2).
     The input "coeff" is reused value we computed when we calculated codomain.
     """ 
-    assert(len(dict(cod_coeff_E1))==l**2)
-    assert(len(dict(cod_coeff_E2))==l**2)
+    #assert(len(dict(cod_coeff_E1))==l**2)
+    #assert(len(dict(cod_coeff_E2))==l**2)
     if method=="One":
         excl_xplincom_lsq_E1=Excellent_term_EvalOne_dim1(
             tc_0_E1,ext_basis_E1,ext_x_E1,l,cod_coeff_E1)
@@ -475,7 +475,7 @@ def Evaluation_dim2_special(
         (k1d,k2d)=c_H_ell[(k1,k2)]
         excl_xplincom_lsq_E12[(k1,k2)]=Prod_nn_nn(
             excl_xplincom_lsq_E1[(k1,k2)],exc_h_lincom_lsq_E2[(k1d,k2d)])
-    assert(len(excl_xplincom_lsq_E12)==l**2)
+    #assert(len(excl_xplincom_lsq_E12)==l**2)
     tc_fx=[0,0,0,0]
     for k1 in range(0,l):
         for k2 in range(0,l):

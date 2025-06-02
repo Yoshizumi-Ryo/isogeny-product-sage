@@ -57,7 +57,7 @@ tnp_E1,first_basis_E1,ext_P1,ext_Q1,ext_x_E1_list,tnp_E2,first_basis_E2,ext_P2,e
 
 
 
-tnp_cod,tc_x_cod_list=Odd_deg_isogeny_chain(
+tnp_cod,tc_x_cod_list,_=Odd_deg_isogeny_chain(
     tnp_E1,first_basis_E1,ext_P1,ext_Q1,ext_x_E1_list,tnp_E2,first_basis_E2,ext_P2,ext_Q2,D,"Square","Proposed")
 
 
@@ -79,28 +79,11 @@ assert pt_fx_E2_list[0].order()==ord1
 assert pt_fx_E2_list[1].order()==ord2
 
 
+
 #==================================================
 
 
-p=0x1935BECE108DC6C0AAD0712181BB1A414E6A8AAA6B510FC29826190FE7EDA80F
+from func_test import Average_time
 
-D=2**4*3*7**(16)*17**9*31**8*311*571*1321
-
-d=2**(150)
-
-(p+1)%D
-
-D**2>4*p
-
-p=0x1935BECE108DC6C0AAD0712181BB1A414E6A8AAA6B510FC29826190FE7EDA80F
-D=3*7**(16)*17**9*31**8*311*571*1321
-d=2**(75)
-
-
-
-sage main.py "Proposed" "One" 2
-sage main.py "Proposed" "Square" 2
-sage main.py "Existing" "One" 2
-sage main.py "Existing" "Square" 2
-
+Average_time(10,"3")
 
