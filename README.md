@@ -22,7 +22,7 @@ $ sage main.py
 
 Here, the base field is $\mathbb{F}_{p^2}$ and the domain is $E_0\times E_0$ where $E_0 : y^2=x^3+x$. 
 
-The  kernel is randomly generated, and we evaluate **two** points of the form $x=(x^{(1)},0_{E_0})$ where $x^{(1)}\in E_0$.
+The  kernel is randomly generated, and we evaluate **one** point of the form $x=(x^{(1)},0_{E_0})$ where $x^{(1)}\in E_0$.
 
 
 ## Example output
