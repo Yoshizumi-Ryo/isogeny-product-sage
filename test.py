@@ -88,3 +88,4 @@ from func_test import Average_time
 Average_time(10,1,3)
 Average_time(10,2,3)
 
+

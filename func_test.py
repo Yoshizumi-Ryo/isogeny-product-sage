@@ -23,10 +23,10 @@ def Test(Proposed_or_Existing,One_or_Square,evaluation_pts=1,parameter=3):
         d=2**(150)
         ord_1,ord_2=17,31
     else:
-        p=0x1935BECE108DC6C0AAD0712181BB1A414E6A8AAA6B510FC29826190FE7EDA80F
-        D=3*7**(16)*17**9*31**8*311
-        d=2**(130)
-        ord_1,ord_2=17,31
+        p = 110564446907225951023
+        D = 7**3 * 11 * 19 * 23**2 * 53 * 137
+        d=2**(37)
+        ord_1,ord_2=7,11
     print("the_number_of_evaluation_points:",evaluation_pts)
     print("p=",p)
     Fp2=GF(p**2)
@@ -86,3 +86,5 @@ def Average_time(n:int,evaluation_pts=1,parameter=3):
             sum_time[t]+=this_time[t]
     return [t/n for t in sum_time]
 
+
+        
