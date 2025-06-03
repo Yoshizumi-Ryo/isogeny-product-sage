@@ -31,86 +31,86 @@ The output is as follows:
  
 Proposed Square
 the_number_of_evaluation_points: 1
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 81.4489909580152 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 11.945503083989024 sec
 Currently computing the remaining isogenies.
-Total time: 94.74064175001695 sec
+Total time: 15.739690750022419 sec
  
  
 Proposed One
 the_number_of_evaluation_points: 1
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 76.0572325840185 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 11.72477579198312 sec
 Currently computing the remaining isogenies.
-Total time: 89.9325613330002 sec
+Total time: 15.515392208006233 sec
  
  
 Existing Square
 the_number_of_evaluation_points: 1
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 137.05124499998055 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 17.43403587496141 sec
 Currently computing the remaining isogenies.
-Total time: 149.65957975000492 sec
+Total time: 21.02453679102473 sec
  
  
 Existing One
 the_number_of_evaluation_points: 1
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 90.68544816601207 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 15.187482875015121 sec
 Currently computing the remaining isogenies.
-Total time: 103.47505300000194 sec
+Total time: 18.834266624995507 sec
  
  
 Proposed Square
 the_number_of_evaluation_points: 2
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 96.02074120898033 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 13.885604707989842 sec
 Currently computing the remaining isogenies.
-Total time: 112.26134029199602 sec
+Total time: 18.73005579202436 sec
  
  
 Proposed One
 the_number_of_evaluation_points: 2
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 83.94251741698827 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 13.235012207995169 sec
 Currently computing the remaining isogenies.
-Total time: 100.57693412501249 sec
+Total time: 18.081460666959174 sec
  
  
 Existing Square
 the_number_of_evaluation_points: 2
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 210.08624183299253 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 24.197118834010325 sec
 Currently computing the remaining isogenies.
-Total time: 225.52677458297694 sec
+Total time: 28.77292233298067 sec
  
  
 Existing One
 the_number_of_evaluation_points: 2
-p= 11402780996313137804419565692258934141207562497476991733713707020990899136527
-isogeny chain: [311, 31, 31, 31, 31, 31, 31, 31, 31, 17, 17, 17, 17, 17, 17, 17, 17, 17, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3]
-ell= 311
-Time: 118.44248887500726 sec
+p= 110564446907225951023
+isogeny chain: [137, 53, 23, 23, 19, 11, 7, 7, 7]
+ell= 137
+Time: 20.33298329199897 sec
 Currently computing the remaining isogenies.
-Total time: 134.0053403749771 sec
+Total time: 25.161946875043213 sec
 
 ```
 
-From the above result, for the proposed "Square" method, to compute one point, it takes about 81.45 seconds to compute the $(311,311)$-isogeny and takes about 94.74 seconds to compute the whole isogeny chain. 
+From the above result, for the proposed "Square" method, to compute one point, it takes about 11.95 seconds to compute the $(311,311)$-isogeny and takes about 15.84 seconds to compute the whole isogeny chain. 
 
 ## Author
 - **Name**: Ryo Yoshizumi 
