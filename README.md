@@ -110,7 +110,7 @@ Total time: 25.161946875043213 sec
 
 ```
 
-From the above result, for the proposed "Square" method, to compute one point, it takes about 11.95 seconds to compute the $(311,311)$-isogeny and takes about 15.84 seconds to compute the whole isogeny chain. 
+From the above result, for the proposed "Square" method, to compute one point, it takes about 11.95 seconds to compute the $(137,137)$-isogeny and takes about 15.84 seconds to compute the whole isogeny chain. 
 
 ## Author
 - **Name**: Ryo Yoshizumi 
