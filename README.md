@@ -15,7 +15,7 @@ This code is written in [SageMath](https://www.sagemath.org).
 Run the following command to compute and measure the runtime of an $(\ell,\ell)$-isogeny chain:
 
 ```bash
-$ sage main.py
+$ sage -python -m src.main
  ```
 
 Here, the base field is $\mathbb{F}_{p^2}$ and the domain is $E_0\times E_0$ where $E_0 : y^2=x^3+x$. 
@@ -27,7 +27,7 @@ The  kernel is randomly generated, and we evaluate **one point** or **two points
 
 The output is as follows:
 ```
-% sage main.py 
+% sage -python -m src.main
  
 Proposed Square
 the_number_of_evaluation_points: 1
@@ -111,6 +111,13 @@ Total time: 25.161946875043213 sec
 ```
 
 From the above result, for the proposed "Square" method, to compute one point, it takes about 11.95 seconds to compute the $(137,137)$-isogeny and takes about 15.84 seconds to compute the whole isogeny chain. 
+
+In addition, with pytest, we are able to confirm that the orders of the images under the isogeny cahin are as expected.
+
+```bash
+$ PYTHONPATH=src sage -python -m pytest -s tests/test.py
+```
+
 
 ## Author
 - **Name**: Ryo Yoshizumi 
