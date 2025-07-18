@@ -1,7 +1,7 @@
-# $ sage main.py 
+# $ sage -python -m src.main
 
 if __name__ == "__main__":
-    from func_test import Test
+    from src.func_test import Test
     time1_ps,time2_ps=Test("Proposed","Square",1)
     time1_po,time2_po=Test("Proposed","One",1)
     time1_es,time2_es=Test("Existing","Square",1)

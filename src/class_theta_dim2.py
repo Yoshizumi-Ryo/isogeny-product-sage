@@ -5,7 +5,7 @@
 ######################################################################
 
 from sage.all import ZZ,factor,sqrt
-from func_fraction import Common_denom_frac,Frac_add,Frac_sub,Frac_mult,Frac_div
+from src.func_fraction import Common_denom_frac,Frac_add,Frac_sub,Frac_mult,Frac_div
 
 
 

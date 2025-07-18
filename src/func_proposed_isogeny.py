@@ -6,11 +6,11 @@
 
 from sage.all import prod
 
-from func_lin_combi   import Set_H_ell,Half_LinCom_dim1,XpLinCom_dim1,Comp_H_ell,Remain_Half_coeff_without0
-from func_fraction    import Dict_common_denom_len3,Multpower_straight,Multpower_sq,Common_denom_frac
-from class_theta_dim1 import Dim1_theta,Dim1_theta_null
-from class_theta_dim2 import Coord,NullCoord
-from func_existing_isogeny import Sum_of_square
+from src.func_lin_combi   import Set_H_ell,Half_LinCom_dim1,XpLinCom_dim1,Comp_H_ell,Remain_Half_coeff_without0
+from src.func_fraction    import Dict_common_denom_len3,Multpower_straight,Multpower_sq,Common_denom_frac
+from src.class_theta_dim1 import Dim1_theta,Dim1_theta_null
+from src.class_theta_dim2 import Coord,NullCoord
+from src.func_existing_isogeny import Sum_of_square
 
 
         

@@ -6,8 +6,8 @@
 
 from sage.all import order,EllipticCurveIsogeny,EllipticCurve,parent,sqrt,factor
 
-from class_theta_dim1 import Dim1_theta_null,Dim1_theta
-from class_theta_dim2 import Coord,NullCoord
+from src.class_theta_dim1 import Dim1_theta_null,Dim1_theta
+from src.class_theta_dim2 import Coord,NullCoord
 import itertools
 
 

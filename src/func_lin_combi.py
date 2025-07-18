@@ -4,7 +4,7 @@
 # The functions will be used for (l,l)-isogeny calculations.
 ######################################################################
 
-from class_theta_dim1 import Dim1_theta_null
+from src.class_theta_dim1 import Dim1_theta_null
 
 
 def Set_H_ell(l:int):

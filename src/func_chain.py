@@ -4,12 +4,12 @@
 
 from sage.all import is_odd,is_prime,sqrt,parent
 
-from func_elliptic import Translate_by_M,Mont_pt_to_lv2,Mont_4torsion_to_lv2null,Pt_to_1m1,Lv2tnp_to_Mont_coeff,Lv2tc_to_Mont_coord,Mont_to_elliptic,Mont_coord_to_point,Decomp_degree
-from class_theta_dim1 import Dim1_theta,Dim1_theta_null
-from func_proposed_isogeny import Codomain_dim2,Evaluation_dim2_special
-from func_elliptic import Is_Elliptic_product
-from func_existing_isogeny import CodOne,CodSq,EvalOne,EvalSq,Product_power_lambda
-from class_theta_dim2 import NullCoord,To_null,Coord
+from src.func_elliptic import Translate_by_M,Mont_pt_to_lv2,Mont_4torsion_to_lv2null,Pt_to_1m1,Lv2tnp_to_Mont_coeff,Lv2tc_to_Mont_coord,Mont_to_elliptic,Mont_coord_to_point,Decomp_degree
+from src.class_theta_dim1 import Dim1_theta,Dim1_theta_null
+from src.func_proposed_isogeny import Codomain_dim2,Evaluation_dim2_special
+from src.func_elliptic import Is_Elliptic_product
+from src.func_existing_isogeny import CodOne,CodSq,EvalOne,EvalSq,Product_power_lambda
+from src.class_theta_dim2 import NullCoord,To_null,Coord
 
 import time
 

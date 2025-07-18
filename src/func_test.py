@@ -1,7 +1,7 @@
 
 from sage.all import GF,is_prime,gcd,EllipticCurve
-from func_chain import Total_computation
-from func_E0 import Pre_Random_Isog_Images
+from src.func_chain import Total_computation
+from src.func_E0 import Pre_Random_Isog_Images
 
 
 def Test(Proposed_or_Existing,One_or_Square,evaluation_pts=1,parameter=3):

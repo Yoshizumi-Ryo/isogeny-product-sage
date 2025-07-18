@@ -6,8 +6,8 @@
 from sage.all import is_prime,is_square,sqrt,is_odd,prod
 
 
-from class_theta_dim2 import Coord,NullCoord
-from func_fraction import Common_denom_frac,Multpower_straight,Frac_add,Projective_Theta,Multpower_sq,Dict_common_denom
+from src.class_theta_dim2 import Coord,NullCoord
+from src.func_fraction import Common_denom_frac,Multpower_straight,Frac_add,Projective_Theta,Multpower_sq,Dict_common_denom
 
 
 

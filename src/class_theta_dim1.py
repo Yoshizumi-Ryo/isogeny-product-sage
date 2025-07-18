@@ -4,7 +4,7 @@
 ######################################################################
 
 from sage.all import ZZ
-from class_theta_dim2 import Coord
+from src.class_theta_dim2 import Coord
 
 
 
